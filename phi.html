@@ -1,25 +1,4 @@
 <!DOCTYPE html>
-<script type="text/javascript">   
-function password() {   
-var testV = 1;   
-var pass1 = prompt('请输入密码','');   
-while (testV < 3) {   
-if (!pass1)   
-history.go(-1);   
-if (pass1 == "6XsCriHIsO") { 
-alert('密码正确');   
-break;   
-}   
-testV+=1;   
-var pass1 =   
-prompt('密码错误!请重新输入:');   
-}   
-if (pass1!="password" & testV ==3)   
-history.go(-1);   
-return " ";   
-}   
-document.write(password());   
-</script>  
 <html>
 
 <head>
@@ -85,7 +64,7 @@ document.write(password());
 			<div><input type="checkbox" id="hitSong" checked><label for="hitSong">开启打击音效</label></div><br>
 			<div><input type="checkbox" id="lineColor" checked><label for="lineColor">FC/AP指示器</label></div>
 			<div><input type="checkbox" id="showPoint"><label for="showPoint">显示定位点</label></div>
-			<div class="disabled-when-playing" style="display:none"><input type="checkbox" id="autoplay" checked><label for="autoplay">AutoPlay</label></div>
+			<div class="disabled-when-playing"><input type="checkbox" id="autoplay" checked=""><label for="autoplay">AutoPlay</label></div>
 			<div class="disabled-when-playing" style="display:none"><input type="checkbox" id="hyperMode"><label for="hyperMode">HyperMode</label></div>
 			<div class="disabled-when-playing"><input type="checkbox" id="showTransition" checked><label for="showTransition">过渡动画</label></div><br>
 			<div class="">谱面镜像：<select id="select-flip" style="width:4em">

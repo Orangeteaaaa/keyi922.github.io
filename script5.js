@@ -1453,7 +1453,7 @@ function loop() {
 	ctx.globalAlpha = 0.8;
 	ctx.textAlign = "right";
 	ctx.textBaseline = "middle";
-	ctx.fillText(`Phigros Simulator v${_i[1].join('.')} - Code by lchz\x683\x3473`, (canvas.width + canvasos.width) / 2 - lineScale * 0.1, canvas.height - lineScale * 0.2);
+	// ctx.fillText(`Phigros Simulator v${_i[1].join('.')} - Code by lchz\x683\x3473`, (canvas.width + canvasos.width) / 2 - lineScale * 0.1, canvas.height - lineScale * 0.2);
 	stopDrawing = requestAnimationFrame(loop); //回调更新动画
 }
 
@@ -1695,14 +1695,14 @@ function qwqdraw1(now) {
 	ctxos.font = `${lineScale * 0.95}px Saira`;
 	ctxos.textAlign = "right";
 	ctxos.fillText(stat.scoreStr, canvasos.width - lineScale * 0.65, lineScale * 1.375);
-	if (!qwq[0]) ctxos.drawImage(res["Pause"], lineScale * 0.6, lineScale * 0.7, lineScale * 0.63, lineScale * 0.7);
+	ctxos.drawImage(res["Pause"], lineScale * 0.6, lineScale * 0.7, lineScale * 0.63, lineScale * 0.7);
 	if (stat.combo > 2) {
 		ctxos.textAlign = "center";
 		ctxos.font = `${lineScale * 1.32}px Saira`;
 		ctxos.fillText(stat.combo, wlen, lineScale * 1.375);
 		ctxos.globalAlpha = qwqIn.second < 0.67 ? tween[2](qwqIn.second * 1.5) : (1 - tween[2](qwqOut.second * 1.5));
 		ctxos.font = `${lineScale * 0.48}px Saira`;
-		ctxos.fillText(autoplay.checked ? "AutoMode" : "COMBO", wlen, lineScale * 2.05);
+		ctxos.fillText(autoplay.checked ? "COMBO" : "COMBO", wlen, lineScale * 2.05);
 	}
 	//绘制歌名和等级
 	ctxos.globalAlpha = 1;
@@ -1720,22 +1720,22 @@ function qwqdraw1(now) {
 	if (dxsnm > wlen - lineScale) ctxos.font = `${(lineScale) * 0.63/dxsnm*(wlen - lineScale )}px Saira`;
 	ctxos.fillText(inputName.value || inputName.placeholder, lineScale * 0.85, canvasos.height - lineScale * 0.66);
 	ctxos.resetTransform();
-	if (qwq[0]) {
-		//绘制时间和帧率以及note打击数
-		if (qwqIn.second < 0.67) ctxos.globalAlpha = tween[2](qwqIn.second * 1.5);
-		else ctxos.globalAlpha = 1 - tween[2](qwqOut.second * 1.5);
-		ctxos.textBaseline = "middle";
-		ctxos.font = `${lineScale * 0.4}px Saira`;
-		ctxos.textAlign = "left";
-		ctxos.fillText(`${time2Str(qwq[5]?duration-timeBgm:timeBgm)}/${time2Str(duration)}${scfg()}`, lineScale * 0.05, lineScale * 0.5);
-		ctxos.textAlign = "right";
-		ctxos.fillText(frameTimer.fps, canvasos.width - lineScale * 0.05, lineScale * 0.5);
-		ctxos.textBaseline = "alphabetic";
-		if (showPoint.checked) stat.combos.forEach((val, idx) => {
-			ctxos.fillStyle = comboColor[idx];
-			ctxos.fillText(val, lineScale * (idx + 1) * 1.1, canvasos.height - lineScale * 0.1);
-		});
-	}
+	// if (qwq[0]) {
+	// 	//绘制时间和帧率以及note打击数
+	// 	if (qwqIn.second < 0.67) ctxos.globalAlpha = tween[2](qwqIn.second * 1.5);
+	// 	else ctxos.globalAlpha = 1 - tween[2](qwqOut.second * 1.5);
+	// 	ctxos.textBaseline = "middle";
+	// 	ctxos.font = `${lineScale * 0.4}px Saira`;
+	// 	ctxos.textAlign = "left";
+	// 	ctxos.fillText(`${time2Str(qwq[5]?duration-timeBgm:timeBgm)}/${time2Str(duration)}${scfg()}`, lineScale * 0.05, lineScale * 0.5);
+	// 	ctxos.textAlign = "right";
+	// 	ctxos.fillText(frameTimer.fps, canvasos.width - lineScale * 0.05, lineScale * 0.5);
+	// 	ctxos.textBaseline = "alphabetic";
+	// 	if (showPoint.checked) stat.combos.forEach((val, idx) => {
+	// 		ctxos.fillStyle = comboColor[idx];
+	// 		ctxos.fillText(val, lineScale * (idx + 1) * 1.1, canvasos.height - lineScale * 0.1);
+	// 	});
+	// }
 	//判定线函数，undefined/0:默认,1:非,2:恒成立
 	function drawLine(bool) {
 		ctxos.globalAlpha = 1;
